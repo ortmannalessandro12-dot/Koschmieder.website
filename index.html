@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koschmieder Haustechnik – Heizung &amp; Sanitär in Lichtenstein</title>
+<meta name="description" content="Heizung, Sanitär und Bad aus Lichtenstein. Wärmepumpe, Pelletheizung, Wartung. Wir übernehmen den Förderantrag. Telefon 07129 2703.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ↓↓↓ EINZIGE FARBE, DIE DU ANFASST: aus dem Logo picken ↓↓↓ */
+  --accent:#E8A33D;
+  --accent-ink:#1C1E21;      /* Textfarbe AUF dem Akzent */
+
+  --ink:#1C1E21; --steel:#4A5259; --mist:#EDEEEF;
+  --line:#D6D9DB; --paper:#fff;
+  --wrap:min(1080px,92vw);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'IBM Plex Sans',system-ui,sans-serif;
+  color:var(--ink); background:var(--paper);
+  font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:var(--wrap);margin-inline:auto}
+section{padding:56px 0}
+h2{font-size:clamp(1.6rem,5vw,2.3rem);font-weight:600;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+.sub{color:var(--steel);max-width:60ch;margin-bottom:28px}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;top:0;z-index:50;background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0}
+/* LOGO: keine Filter, kein blend-mode, kein Hintergrund. Nur Höhe begrenzen. */
+.logo img{height:52px;width:auto}
+.call-mini{
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--accent);color:var(--accent-ink);
+  font-weight:600;text-decoration:none;
+  padding:11px 16px;border-radius:3px;white-space:nowrap;
+}
+
+/* ---------- HERO ---------- */
+.hero{padding:48px 0 44px}
+.hero h1{
+  font-size:clamp(2rem,7.5vw,3.4rem);font-weight:600;
+  letter-spacing:-.03em;line-height:1.08;max-width:16ch;
+}
+.hero p{color:var(--steel);margin-top:18px;max-width:52ch}
+.callbox{
+  margin-top:32px;border:2px solid var(--ink);border-radius:4px;
+  display:inline-block;max-width:100%;
+}
+.callbox a{
+  display:block;text-decoration:none;padding:18px 26px;
+  font-size:clamp(1.5rem,6vw,2rem);font-weight:700;letter-spacing:-.02em;
+}
+.callbox span{
+  display:block;border-top:1px solid var(--line);
+  padding:9px 26px;font-size:.87rem;color:var(--steel);
+}
+
+/* ---------- LEISTUNGEN (Zeilen, keine Karten) ---------- */
+.rows{border-top:1px solid var(--line)}
+.row{
+  display:grid;grid-template-columns:1fr;gap:2px;
+  padding:20px 0;border-bottom:1px solid var(--line);
+}
+.row b{font-size:1.13rem;font-weight:600}
+.row p{color:var(--steel);font-size:.96rem}
+@media(min-width:720px){
+  .row{grid-template-columns:minmax(210px,.9fr) 2fr;gap:24px;align-items:baseline}
+}
+
+/* ---------- FÖRDERUNG ---------- */
+.foerder{background:var(--mist)}
+.steps{counter-reset:s;margin-top:26px;display:grid;gap:1px;background:var(--line)}
+.step{
+  counter-increment:s;background:var(--mist);
+  padding:18px 0 18px 46px;position:relative;
+}
+.step::before{
+  content:counter(s);position:absolute;left:0;top:18px;
+  width:29px;height:29px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  font-size:.87rem;font-weight:600;
+  display:grid;place-items:center;
+}
+.step b{display:block;font-weight:600;margin-bottom:2px}
+.step p{color:var(--steel);font-size:.95rem}
+.warn{
+  margin-top:26px;padding:18px 20px;background:var(--paper);
+  border-left:4px solid var(--accent);font-size:.97rem;
+}
+.stand{margin-top:16px;font-size:.82rem;color:var(--steel)}
+
+/* ---------- GALERIE / PARTNER PLATZHALTER ---------- */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(4,1fr)}}
+.slot{
+  aspect-ratio:4/3;border:1.5px dashed var(--line);border-radius:3px;
+  display:grid;place-items:center;text-align:center;
+  color:var(--steel);font-size:.8rem;padding:10px;background:var(--mist);
+}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
+@media(min-width:600px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+.pslot{
+  height:74px;border:1.5px dashed var(--line);border-radius:3px;
+  display:grid;place-items:center;color:var(--steel);font-size:.78rem;
+}
+
+/* ---------- GEBIET ---------- */
+.orte{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.orte li{
+  list-style:none;border:1px solid var(--line);
+  padding:7px 13px;border-radius:3px;font-size:.93rem;
+}
+
+/* ---------- KONTAKT ---------- */
+.kontakt{background:var(--ink);color:#fff}
+.kontakt h2{color:#fff}
+.kontakt .sub{color:#B9BFC4}
+.form{display:grid;gap:13px;max-width:520px;margin-top:26px}
+.form label{font-size:.88rem;font-weight:500;display:block;margin-bottom:5px}
+.form input,.form textarea{
+  width:100%;padding:13px;border:1px solid #3A4147;border-radius:3px;
+  background:#262A2E;color:#fff;font:inherit;font-size:1rem;
+}
+.form textarea{min-height:120px;resize:vertical}
+.form button{
+  background:var(--accent);color:var(--accent-ink);border:0;
+  padding:15px;border-radius:3px;font:inherit;font-weight:600;
+  font-size:1.03rem;cursor:pointer;
+}
+.direkt{margin-top:30px;font-size:.97rem;line-height:2}
+.direkt a{font-weight:600}
+
+footer{background:var(--ink);color:#8E969C;border-top:1px solid #2E3438;padding:26px 0;font-size:.87rem}
+footer a{color:#B9BFC4}
+
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <!-- LOGO 1:1, unverändert. Datei ersetzen, sonst nichts anfassen. -->
+    <span class="logo">
+      <img src="logo-koschmieder.jpg" alt="Koschmieder Haustechnik" width="200" height="52">
+    </span>
+    <a class="call-mini" href="tel:+4971292703">Anrufen</a>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <h1>Heizung und Sanitär auf der Alb.</h1>
+  <p>Koschmieder Haustechnik aus Lichtenstein. Beratung, Einbau und Wartung –
+     vom tropfenden Hahn bis zur neuen Wärmepumpe.</p>
+
+  <div class="callbox">
+    <a href="tel:+4971292703">07129 2703</a>
+    <span>Mo–Fr <!-- TODO Zeiten erfragen --> · Mobil 0162 9173352</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Was wir machen</h2>
+  <div class="rows">
+    <div class="row"><b>Heizung</b><p>Neuanlage, Austausch und Reparatur. Gas, Öl, Wärmepumpe, Pellet.</p></div>
+    <div class="row"><b>Wärmepumpe</b><p>Planung, Einbau und die Bestätigung, die Sie für den Förderantrag brauchen.</p></div>
+    <div class="row"><b>Pelletheizung</b><p>Heizen mit Holz – förderfähig und unabhängig vom Gaspreis.</p></div>
+    <div class="row"><b>Sanitär</b><p>Leitungen, Armaturen, Warmwasser. Auch kleine Reparaturen.</p></div>
+    <div class="row"><b>Bad</b><p>Vom Teilumbau bis zum kompletten neuen Bad, aus einer Hand.</p></div>
+    <div class="row"><b>Wartung</b><p>Jährliche Prüfung, damit die Anlage im Winter läuft und die Garantie hält.</p></div>
+  </div>
+</section>
+
+<section class="foerder">
+  <div class="wrap">
+    <h2>Förderung: die Reihenfolge entscheidet</h2>
+    <p class="sub">Für den Heizungstausch gibt es Zuschüsse der KfW. Wer die Schritte
+       vertauscht, verliert sie komplett – rückwirkend zahlt die KfW nicht.</p>
+
+    <div class="steps">
+      <div class="step"><b>Wir beraten und rechnen</b>
+        <p>Welche Heizung passt, was kostet sie, was ist realistisch förderfähig.</p></div>
+      <div class="step"><b>Wir stellen die Bestätigung aus</b>
+        <p>Die BzA mit Ihrer 15-stelligen ID. Ohne Fachbetrieb kein Antrag.</p></div>
+      <div class="step"><b>Sie stellen den Antrag bei der KfW</b>
+        <p>Wir helfen beim Ausfüllen, wenn Sie möchten.</p></div>
+      <div class="step"><b>Erst danach wird beauftragt</b>
+        <p>Zusage abwarten, dann bauen wir ein.</p></div>
+    </div>
+
+    <p class="warn"><strong>Häufigster Fehler:</strong> zuerst den Auftrag unterschreiben,
+       dann den Antrag stellen. Dann ist die Förderung weg. Rufen Sie vorher an –
+       das Gespräch kostet nichts.</p>
+
+    <p class="stand">Fördersätze Stand <!-- TODO Datum eintragen -->.
+       Die Konditionen ändern sich halbjährlich; verbindlich ist immer der Bescheid der KfW.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Arbeiten aus der Region</h2>
+  <p class="sub">Ausgeführte Anlagen und Bäder von unseren Baustellen.</p>
+  <div class="grid">
+    <!-- TODO: 4 echte Baustellenfotos von Herrn Koschmieder -->
+    <div class="slot">Baustellenfoto</div>
+    <div class="slot">Baustellenfoto</div>
+    <div class="slot">Baustellenfoto</div>
+    <div class="slot">Baustellenfoto</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Womit wir arbeiten</h2>
+  <p class="sub">Hersteller, mit denen wir regelmäßig bauen.</p>
+  <div class="pgrid">
+    <!-- TODO: NUR Logos einsetzen, für die eine Fachpartner-Freigabe vorliegt -->
+    <div class="pslot">Partner</div>
+    <div class="pslot">Partner</div>
+    <div class="pslot">Partner</div>
+    <div class="pslot">Partner</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Wo wir arbeiten</h2>
+  <ul class="orte">
+    <li>Lichtenstein</li><li>Engstingen</li><li>Pfullingen</li>
+    <li>Reutlingen</li><li>Sonnenbühl</li><li>St. Johann</li>
+    <li>Trochtelfingen</li><li>Gomadingen</li>
+  </ul>
+</section>
+
+<section class="kontakt">
+  <div class="wrap">
+    <h2>Anfrage schicken</h2>
+    <p class="sub">Wir melden uns in der Regel am nächsten Werktag.</p>
+
+    <!-- TODO: action= auf Formspree / Web3Forms setzen, sonst geht nichts raus -->
+    <form class="form" action="#" method="POST">
+      <div><label for="n">Name</label><input id="n" name="name" required></div>
+      <div><label for="t">Telefon</label><input id="t" name="telefon" type="tel" required></div>
+      <div><label for="e">E-Mail</label><input id="e" name="email" type="email"></div>
+      <div><label for="m">Worum geht es?</label><textarea id="m" name="nachricht" required></textarea></div>
+      <button type="submit">Anfrage senden</button>
+    </form>
+
+    <p class="direkt">
+      Oder direkt:<br>
+      <a href="tel:+4971292703">07129 2703</a> · <a href="tel:+491629173352">0162 9173352</a><br>
+      <a href="mailto:info@koschmieder-haustechnik.de">info@koschmieder-haustechnik.de</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Koschmieder Haustechnik · Bussenhardstraße 26 · 72805 Lichtenstein ·
+    <a href="impressum.html">Impressum &amp; Datenschutz</a>
+  </div>
+</footer>
+
+</body>
+</html>
