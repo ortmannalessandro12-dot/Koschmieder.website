@@ -147,6 +147,19 @@ footer a{color:#B9BFC4}
 
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.fc-box{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:26px 22px;margin-top:28px;max-width:560px}
+.fc-progress{height:4px;background:var(--line);border-radius:2px;margin-bottom:22px;overflow:hidden}
+.fc-progress span{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.fc-q{font-weight:600;font-size:1.1rem;margin-bottom:16px}
+.fc-options{display:grid;gap:10px}
+.fc-options button{text-align:left;padding:14px 16px;border:1.5px solid var(--line);border-radius:4px;background:var(--paper);font:inherit;font-size:1rem;cursor:pointer}
+.fc-options button:hover{border-color:var(--accent)}
+.fc-options button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.fc-tags{list-style:none;display:grid;gap:8px;margin:18px 0}
+.fc-tags li{padding:10px 14px;background:var(--mist);border-radius:3px;font-size:.95rem}
+.fc-note{color:var(--steel);font-size:.9rem;margin:16px 0}
+.fc-cta{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:13px 22px;border-radius:3px;font-weight:600;text-decoration:none}
 </style>
 </head>
 <body>
@@ -204,6 +217,46 @@ footer a{color:#B9BFC4}
     <p class="warn"><strong>Häufigster Fehler:</strong> zuerst den Auftrag unterschreiben,
        dann den Antrag stellen. Dann ist die Förderung weg. Rufen Sie vorher an –
        das Gespräch kostet nichts.</p>
+
+    <div class="fc-box" id="fc-box">
+      <div class="fc-progress"><span id="fc-progress-fill"></span></div>
+      <div class="fc-step" data-step="1">
+        <p class="fc-q">Was planen Sie?</p>
+        <div class="fc-options">
+          <button data-key="massnahme" data-val="waermepumpe">Wärmepumpe</button>
+          <button data-key="massnahme" data-val="pellet">Pelletheizung</button>
+          <button data-key="massnahme" data-val="sonstige">Andere Heizung</button>
+        </div>
+      </div>
+      <div class="fc-step" data-step="2" hidden>
+        <p class="fc-q">Wohnen Sie selbst in dem Gebäude?</p>
+        <div class="fc-options">
+          <button data-key="selbstnutzung" data-val="ja">Ja</button>
+          <button data-key="selbstnutzung" data-val="nein">Nein, vermietet</button>
+        </div>
+      </div>
+      <div class="fc-step" data-step="3" hidden>
+        <p class="fc-q">Was wird ersetzt?</p>
+        <div class="fc-options">
+          <button data-key="altheizung" data-val="fossil-alt">Öl, Kohle oder Nachtspeicher</button>
+          <button data-key="altheizung" data-val="gas-alt">Gas- oder Biomasseheizung, älter als 20 Jahre</button>
+          <button data-key="altheizung" data-val="neu">Andere / weiß ich nicht</button>
+        </div>
+      </div>
+      <div class="fc-step" data-step="4" hidden>
+        <p class="fc-q">Lebt ein minderjähriges Kind in Ihrem Haushalt?</p>
+        <div class="fc-options">
+          <button data-key="kind" data-val="ja">Ja</button>
+          <button data-key="kind" data-val="nein">Nein</button>
+        </div>
+      </div>
+      <div class="fc-step fc-result" data-step="5" hidden>
+        <p class="fc-q">Das sieht bei Ihnen nach folgenden Bausteinen aus:</p>
+        <ul id="fc-result-list" class="fc-tags"></ul>
+        <p class="fc-note">Die genaue Förderhöhe hängt vom aktuellen KfW-Satz ab – die rechnen wir Ihnen im kostenlosen Gespräch exakt vor.</p>
+        <a href="tel:+4971292703" class="fc-cta">Jetzt kostenlos besprechen</a>
+      </div>
+    </div>
 
     <p class="stand">Fördersätze Stand <!-- TODO Datum eintragen -->.
        Die Konditionen ändern sich halbjährlich; verbindlich ist immer der Bescheid der KfW.</p>
@@ -271,6 +324,48 @@ footer a{color:#B9BFC4}
     <a href="impressum.html">Impressum &amp; Datenschutz</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  const answers = {};
+  const steps = document.querySelectorAll('#fc-box .fc-step');
+  const fill = document.getElementById('fc-progress-fill');
+  let current = 1;
+  function show(n){
+    steps.forEach(s => s.hidden = Number(s.dataset.step) !== n);
+    fill.style.width = (n-1)/4*100 + '%';
+    current = n;
+  }
+  document.querySelectorAll('#fc-box button[data-key]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      answers[btn.dataset.key] = btn.dataset.val;
+      if(current < 4){ show(current+1); } else { renderResult(); show(5); }
+    });
+  });
+  function renderResult(){
+    const list = document.getElementById('fc-result-list');
+    list.innerHTML = '';
+    const items = ['30% Grundförderung – Basis für jede förderfähige Heizung'];
+    if(answers.selbstnutzung === 'ja' && (answers.altheizung === 'fossil-alt' || answers.altheizung === 'gas-alt')){
+      items.push('Klimageschwindigkeitsbonus möglich – Sie wohnen selbst im Haus und tauschen eine ältere Heizung');
+    }
+    if(answers.kind === 'ja'){
+      items.push('Der Einkommensbonus fällt bei Kindern im Haushalt oft höher aus');
+    } else {
+      items.push('Einkommensbonus – abhängig von Ihrem Haushaltseinkommen, klären wir im Gespräch');
+    }
+    if(answers.massnahme === 'pellet'){
+      items.push('Pelletheizungen sind grundsätzlich förderfähig, oft mit eigenen Auflagen');
+    }
+    items.forEach(t=>{
+      const li = document.createElement('li');
+      li.textContent = t;
+      list.appendChild(li);
+    });
+  }
+  show(1);
+})();
+</script>
 
 </body>
 </html>
