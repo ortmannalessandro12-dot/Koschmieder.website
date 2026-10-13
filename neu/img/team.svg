@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Zeichnung: Team vor dem Firmenwagen">
+<style>
+.wink{transform-box:view-box;transform-origin:108px 150px;animation:wink 2.6s ease-in-out infinite}
+@keyframes wink{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-14deg)}80%{transform:rotate(6deg)}90%{transform:rotate(-10deg)}}
+.sun{transform-box:fill-box;transform-origin:center;animation:pulse 3s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.12)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF2F8"/><stop offset="1" stop-color="#E1E7F0"/></linearGradient>
+<linearGradient id="van" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E7EBF2"/></linearGradient>
+</defs>
+<rect width="400" height="300" fill="url(#bg)"/>
+<rect y="246" width="400" height="54" fill="#D6DDE8"/>
+<!-- Wagen -->
+<path d="M150 82Q150 64 170 62H352Q372 62 384 84L408 128V232H150Z" fill="url(#van)" stroke="#C9D1DE" stroke-width="2"/>
+<path d="M352 70H372Q378 70 382 78L398 116H352Z" fill="#1E2B55"/>
+<path d="M346 66V232" stroke="#D5DBE5" stroke-width="2"/>
+<rect x="150" y="200" width="258" height="10" fill="#D5DBE5"/>
+<circle class="sun" cx="214" cy="100" r="9" fill="#F3E400"/>
+<path d="M200 104c6-10 12 2 18-6M222 100c4-6 8 4 12-2s8 4 12-2 8 4 12-2 8 4 12-2" fill="none" stroke="#1E2B55" stroke-width="3" stroke-linecap="round"/>
+<path d="M196 130l8-10 8 10" fill="none" stroke="#D7432F" stroke-width="5" stroke-linejoin="round"/>
+<path d="M214 130H300" stroke="#1E2B55" stroke-width="3" stroke-linecap="round"/>
+<path d="M200 146H270M200 156H286" stroke="#9AA6BA" stroke-width="3" stroke-linecap="round"/>
+<g><circle cx="214" cy="234" r="22" fill="#1E2B55"/><circle cx="214" cy="234" r="9" fill="#C9D1DE"/><circle cx="356" cy="234" r="22" fill="#1E2B55"/><circle cx="356" cy="234" r="9" fill="#C9D1DE"/></g>
+<!-- Schatten -->
+<g fill="#C2CAD8"><ellipse cx="96" cy="262" rx="30" ry="5"/><ellipse cx="170" cy="264" rx="32" ry="5"/><ellipse cx="248" cy="262" rx="30" ry="5"/></g>
+<!-- Person links, winkt -->
+<g>
+  <rect x="82" y="200" width="12" height="60" rx="5" fill="#2A3560"/><rect x="98" y="200" width="12" height="60" rx="5" fill="#2A3560"/>
+  <path d="M76 150q0-16 20-16t20 16v56H76z" fill="#1E2B55"/>
+  <rect x="82" y="168" width="28" height="4" fill="#F3E400" opacity=".9"/>
+  <circle cx="104" cy="152" r="3.5" fill="#D7432F"/>
+  <path d="M78 152q-8 18-6 46" stroke="#1E2B55" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <circle cx="72" cy="200" r="6" fill="#E8B894"/>
+  <g class="wink"><path d="M112 150q16-6 22-30" stroke="#1E2B55" stroke-width="11" stroke-linecap="round" fill="none"/><circle cx="135" cy="116" r="6" fill="#E8B894"/></g>
+  <rect x="91" y="120" width="10" height="12" fill="#E8B894"/>
+  <circle cx="96" cy="112" r="15" fill="#E8B894"/>
+  <path d="M81 110q2-18 17-17 14 1 13 15-6-8-16-8-8 0-14 10z" fill="#5A3B28"/>
+</g>
+<!-- Person Mitte, Werkzeugkoffer -->
+<g>
+  <rect x="156" y="198" width="13" height="64" rx="5" fill="#2A3560"/><rect x="173" y="198" width="13" height="64" rx="5" fill="#2A3560"/>
+  <path d="M148 146q0-18 23-18t23 18v58h-46z" fill="#1E2B55"/>
+  <rect x="155" y="166" width="32" height="4" fill="#F3E400" opacity=".9"/>
+  <circle cx="183" cy="148" r="3.5" fill="#D7432F"/>
+  <path d="M150 150q-6 22-4 46" stroke="#1E2B55" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M192 150q8 22 8 48" stroke="#1E2B55" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <rect x="186" y="204" width="36" height="26" rx="4" fill="#D7432F"/><path d="M196 204v-6h16v6" fill="none" stroke="#B8362A" stroke-width="4"/><rect x="186" y="214" width="36" height="3" fill="#B8362A"/>
+  <circle cx="200" cy="202" r="6" fill="#D9A47F"/>
+  <circle cx="146" cy="198" r="6" fill="#D9A47F"/>
+  <rect x="166" y="114" width="10" height="14" fill="#D9A47F"/>
+  <circle cx="171" cy="104" r="16" fill="#D9A47F"/>
+  <path d="M155 102q0-20 17-19 15 1 15 17-4-6-14-7-12-1-18 9z" fill="#9AA0AC"/>
+</g>
+<!-- Person rechts -->
+<g>
+  <rect x="234" y="202" width="12" height="58" rx="5" fill="#2A3560"/><rect x="250" y="202" width="12" height="58" rx="5" fill="#2A3560"/>
+  <path d="M228 152q0-16 20-16t20 16v54h-40z" fill="#1E2B55"/>
+  <rect x="234" y="170" width="28" height="4" fill="#F3E400" opacity=".9"/>
+  <circle cx="256" cy="154" r="3.5" fill="#D7432F"/>
+  <path d="M232 156q-8 18-6 44" stroke="#1E2B55" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M264 156q8 18 6 44" stroke="#1E2B55" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <circle cx="226" cy="202" r="6" fill="#F1C7A6"/><circle cx="270" cy="202" r="6" fill="#F1C7A6"/>
+  <rect x="243" y="122" width="10" height="12" fill="#F1C7A6"/>
+  <circle cx="248" cy="114" r="15" fill="#F1C7A6"/>
+  <path d="M232 116q-2-22 17-21 17 1 15 21-2-10-9-12-10 6-23 12z" fill="#C89A4A"/>
+</g>
+</svg>
