@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Koschmieder Haustechnik – Heizung, Solar, Sanitär und Bad in Lichtenstein</title>
+<meta name="description" content="Koschmieder Haustechnik aus Lichtenstein: Heizung, Solar, Gas- und Ölfeuerung, Sanitär, Kundendienst und Badsanierung. Telefon 07129 2703.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo.svg">
+<style>
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff) format('woff');font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --red:#D7432F; --red-dark:#B8362A;      /* Dach im Logo */
+  --navy:#1E2B55;                         /* Schriftzug im Logo */
+  --sun:#F3E400; --sun-soft:#FFF6C4;      /* Sonne im Logo */
+  --ink:#1D2433; --muted:#5B6476; --line:#E3E7EE; --soft:#F4F6F9; --paper:#fff;
+  --shadow:0 2px 12px rgba(20,32,70,.08),0 1px 2px rgba(20,32,70,.06);
+  --gut:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Archivo,system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:16.5px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1100px,calc(100% - 2*var(--gut)));margin-inline:auto}
+section{padding:46px 0}
+h2{font-size:1.5rem;line-height:1.2;font-weight:650;color:var(--navy);text-align:center;letter-spacing:-.005em}
+h2 + .lead{text-align:center;color:var(--muted);margin:8px auto 0;max-width:34ch}
+.ic{width:20px;height:20px;flex:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* Kopf */
+.kopf{padding:22px var(--gut) 18px;text-align:center}
+.kopf img{width:min(270px,72vw);height:auto;margin:0 auto}
+.kopf p{font-size:.9rem;line-height:1.4;color:var(--ink);margin-top:10px;font-weight:500}
+.leiste{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:8px var(--gut);transform:translateY(-110%);transition:transform .3s ease}
+.leiste.da{transform:none}
+.leiste img{height:38px;width:auto}
+.leiste a{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:9px 15px;border-radius:999px;font-size:.95rem}
+.leiste .ic{width:16px;height:16px}
+
+/* Bild-Slider */
+.slider{position:relative;background:var(--soft)}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.slides::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;position:relative;overflow:hidden;margin:0}
+.slide img{width:100%;height:100%;object-fit:cover;object-position:0 50%}
+.slide.an img{animation:zoom 7s ease-out both}
+@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.ph{background:linear-gradient(160deg,#EEF1F6,#DCE2EC);display:grid;place-items:center}
+.ph svg{width:96px;height:96px;opacity:.55}
+.ph figcaption{position:absolute;left:14px;bottom:34px;font-size:.78rem;color:var(--muted);background:rgba(255,255,255,.8);padding:4px 8px;border-radius:4px}
+.pfeil{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer;color:var(--navy)}
+.pfeil.l{left:10px}.pfeil.r{right:10px}
+.pfeil svg{width:18px;height:18px}
+.punkte{position:absolute;left:0;right:0;bottom:42px;display:flex;justify-content:center;gap:7px}
+.punkte button{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.75);box-shadow:0 0 0 1px rgba(0,0,0,.15);padding:0;cursor:pointer;transition:width .25s}
+.punkte button[aria-current="true"]{background:var(--red);width:22px;border-radius:4px}
+.held{text-align:center;padding:26px var(--gut) 34px;position:relative;margin-top:-28px;background:var(--paper);border-radius:22px 22px 0 0}
+.held h1{font-size:2rem;line-height:1.12;font-weight:700;color:var(--navy);letter-spacing:-.015em}
+.held h1 span{display:block;color:var(--red)}
+.held p{color:var(--muted);margin:12px auto 0;max-width:32ch}
+.knopf{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;font-size:1.02rem;min-height:52px;padding:0 26px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(215,67,47,.6);transition:background .2s,transform .15s}
+.knopf:active{transform:scale(.98)}
+.knopf:hover{background:var(--red-dark)}
+.held .knopf{margin-top:22px}
+.held .tel{display:block;margin-top:14px;color:var(--navy);font-weight:600;text-decoration:none}
+.held .tel span{color:var(--muted);font-weight:400}
+
+/* Leistungen */
+.kacheln{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.kachel{background:var(--paper);border-radius:12px;box-shadow:var(--shadow);padding:18px 12px 16px;text-align:center;border:1px solid #EEF1F5}
+.kachel svg{width:46px;height:46px;margin:0 auto 10px}
+.kachel b{display:block;font-weight:650;font-size:1rem;color:var(--navy);line-height:1.2}
+.kachel small{display:block;font-size:.8rem;color:var(--muted);margin-top:5px;line-height:1.35}
+.js .kachel{opacity:0;transform:translateY(14px)}
+.js .kacheln.an .kachel{opacity:1;transform:none;transition:opacity .45s ease,transform .45s ease}
+.kacheln.an .kachel:nth-child(2){transition-delay:.06s}.kacheln.an .kachel:nth-child(3){transition-delay:.12s}
+.kacheln.an .kachel:nth-child(4){transition-delay:.18s}.kacheln.an .kachel:nth-child(5){transition-delay:.24s}.kacheln.an .kachel:nth-child(6){transition-delay:.3s}
+
+/* Warum */
+.warum{background:var(--soft)}
+.gruende{list-style:none;margin-top:22px;display:grid;gap:12px}
+.gruende li{background:var(--paper);border-radius:12px;padding:16px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow)}
+.gruende svg{width:28px;height:28px;flex:none;margin-top:1px}
+.gruende b{display:block;color:var(--navy);font-weight:650}
+.gruende p{color:var(--muted);font-size:.93rem;margin-top:2px}
+
+/* Förderung */
+.foerder h2{margin-bottom:0}
+.rechner{background:var(--paper);border-radius:16px;box-shadow:0 10px 30px -12px rgba(20,32,70,.25),0 0 0 1px var(--line);padding:20px 16px 16px;margin-top:22px;min-height:330px;scroll-margin-top:70px}
+.r-in > *{animation:rein .35s ease both}
+@keyframes rein{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+.r-progress{display:flex;gap:6px;margin-bottom:16px}
+.r-progress span{height:6px;flex:1;border-radius:3px;background:var(--line)}
+.r-progress span.on{background:var(--red)}
+.r-q{font-weight:650;font-size:1.15rem;line-height:1.3;color:var(--navy);outline:none}
+.r-hint{color:var(--muted);font-size:.88rem;margin-top:5px}
+.r-opts{display:grid;gap:8px;margin-top:14px}
+.r-opt{-webkit-appearance:none;appearance:none;display:flex;align-items:center;gap:12px;text-align:left;min-height:54px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;font-size:.98rem;line-height:1.3;cursor:pointer;transition:border-color .15s,background .15s}
+.r-opt::before{content:"";flex:none;width:20px;height:20px;border-radius:50%;border:2px solid #B9C1CF;background:var(--paper);transition:all .15s}
+.r-opt:hover{border-color:var(--red)}
+.r-opt:active{background:#FFF1EE}
+.r-opt:active::before{border-color:var(--red);box-shadow:inset 0 0 0 4px #fff;background:var(--red)}
+.r-back{-webkit-appearance:none;appearance:none;background:none;border:0;color:var(--muted);font:inherit;font-size:.93rem;text-decoration:underline;text-underline-offset:3px;margin-top:12px;padding:8px 0;cursor:pointer}
+.r-label{color:var(--muted);font-size:.93rem;font-weight:500}
+.r-sum{font-weight:750;font-size:2.35rem;line-height:1.1;color:var(--navy);letter-spacing:-.02em;outline:none;margin-top:2px;font-variant-numeric:tabular-nums}
+.r-sub{color:var(--muted);font-size:.9rem;margin-top:6px}
+.r-list{list-style:none;margin:16px 0 8px;border-radius:10px;background:var(--soft);padding:2px 14px}
+.r-list li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;font-size:.95rem}
+.r-list li + li{border-top:1px solid var(--line)}
+.r-list .r-cap{color:var(--muted)}
+.r-note{color:var(--muted);font-size:.9rem;margin:10px 0}
+.r-cta{display:flex;align-items:center;justify-content:center;min-height:52px;background:var(--red);color:#fff;border-radius:999px;font-weight:600;text-decoration:none;margin-top:14px}
+.r-fine{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.45}
+.ablauf{margin-top:16px;background:var(--paper);border-radius:12px;border:1px solid var(--line)}
+.ablauf summary{cursor:pointer;list-style:none;padding:15px 16px;font-weight:600;color:var(--navy);display:flex;justify-content:space-between;align-items:center}
+.ablauf summary::-webkit-details-marker{display:none}
+.ablauf summary svg{width:18px;height:18px;transition:transform .2s}
+.ablauf[open] summary svg{transform:rotate(180deg)}
+.ablauf ol{list-style:none;counter-reset:s;padding:0 16px 8px}
+.ablauf li{counter-increment:s;position:relative;padding:0 0 14px 38px;font-size:.93rem;color:var(--muted)}
+.ablauf li b{display:block;color:var(--ink);font-weight:600}
+.ablauf li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;font-size:.8rem;font-weight:600;display:grid;place-items:center}
+.ablauf li.achtung::before{background:var(--red)}
+.ablauf li.achtung b{color:var(--red)}
+.ablauf .stand{font-size:.78rem;padding:0 16px 16px;color:var(--muted)}
+
+/* Referenzen */
+.ref h2{text-align:left}
+.ref .lead{text-align:left;margin-left:0}
+.bilder{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.bilder figure{margin:0;border-radius:10px;overflow:hidden;aspect-ratio:1;position:relative}
+.bilder figure.breit{grid-column:1/-1;aspect-ratio:16/10}
+.bilder img{width:100%;height:100%;object-fit:cover}
+.bilder button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.bilder .ph svg{width:52px;height:52px}
+.bilder .ph figcaption{bottom:10px;left:10px}
+.zoom{position:fixed;inset:0;z-index:80;background:rgba(10,14,30,.92);display:none;align-items:center;justify-content:center;padding:16px}
+.zoom.offen{display:flex;animation:auf .2s ease}
+@keyframes auf{from{opacity:0}to{opacity:1}}
+.zoom img{max-height:86vh;border-radius:8px}
+.zoom button{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.4rem;cursor:pointer;color:var(--navy)}
+
+/* Kundendienst */
+.dienst{background:var(--sun-soft);border-radius:16px;padding:22px 20px;text-align:center;border:1px solid #F1E39A}
+.dienst b{display:block;font-size:1.3rem;color:var(--navy);font-weight:700}
+.dienst p{color:#5A5434;font-size:.95rem;margin-top:4px}
+.dienst a.gross{display:inline-block;margin-top:12px;font-size:2rem;font-weight:750;color:var(--red);text-decoration:none;letter-spacing:-.01em}
+.dienst .mobil{display:block;margin-top:2px;color:var(--navy);font-weight:600;text-decoration:none}
+
+/* Termin */
+.termin{background:var(--soft)}
+.form{display:grid;gap:14px;margin-top:22px}
+.form label,.form legend{display:block;font-size:.9rem;font-weight:600;margin-bottom:6px;color:var(--navy)}
+.form input,.form textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);font:inherit;font-size:1rem;color:var(--ink)}
+.form input:focus,.form textarea:focus{border-color:var(--navy);outline:none}
+.form textarea{min-height:100px;resize:vertical}
+fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{margin:0;padding:9px 14px;border-radius:999px;background:var(--paper);border:1.5px solid var(--line);font-weight:500;color:var(--ink);cursor:pointer}
+.chips input:checked + label{background:var(--navy);border-color:var(--navy);color:#fff}
+.chips input:focus-visible + label{outline:3px solid var(--red);outline-offset:2px}
+.opt{color:var(--muted);font-weight:400}
+.form .knopf{border:0;cursor:pointer;width:100%;font-family:inherit}
+
+/* Fuß */
+footer{background:var(--navy);color:#C9D0E4;padding:36px 0 30px;font-size:.92rem}
+footer img{width:200px;height:auto}
+footer h3{color:#fff;font-size:1rem;font-weight:650;margin:26px 0 8px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{color:#fff;text-decoration:none}
+footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding-top:16px;font-size:.8rem;color:#98A2C0}
+
+@media(min-width:900px){
+  section{padding:70px 0}
+  .slider{max-width:1100px;margin:0 auto;border-radius:18px;overflow:hidden}
+  .slide{aspect-ratio:16/9}
+  .held{margin-top:-60px;max-width:640px;margin-inline:auto;border-radius:22px;box-shadow:var(--shadow)}
+  .kacheln{grid-template-columns:repeat(3,1fr)}
+  .gruende{grid-template-columns:repeat(3,1fr)}
+  .foerder .wrap{max-width:640px}
+  .bilder{grid-template-columns:repeat(4,1fr)}
+  .bilder figure.breit{grid-column:span 2;aspect-ratio:auto}
+  .fuss{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:30px}
+  .fuss h3{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .kachel{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.className='js'</script>
+
+<div class="leiste" id="leiste" aria-hidden="true">
+  <img src="img/logo.svg" alt="" width="94" height="38">
+  <a href="tel:+4971292703" tabindex="-1">
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.12.37 2.33.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+    Anrufen</a>
+</div>
+
+<header class="kopf" id="kopf">
+  <!-- Logo vom Firmenwagen nachgezeichnet. Originaldatei bei Herrn Koschmieder anfragen. -->
+  <img src="img/logo.svg" alt="Koschmieder Haustechnik" width="525" height="211">
+  <p>Heizung, Solar, Gas- und Ölfeuerung,<br>Sanitär, Kundendienst, Badsanierung</p>
+</header>
+
+<main>
+<div class="slider" aria-roledescription="Bildergalerie" aria-label="Bilder aus unserer Arbeit">
+  <div class="slides" id="slides" tabindex="0">
+    <figure class="slide"><img src="img/wagen.jpg" alt="Firmenwagen von Koschmieder Haustechnik mit Logo und Leistungen" width="1400" height="880"></figure>
+    <!-- TODO Fotos: img/bad.jpg, img/heizraum.jpg, img/solar.jpg einsetzen (Querformat, mind. 1400 px breit) -->
+    <figure class="slide ph" aria-label="Platzhalter Bad">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34h48v6a14 14 0 0 1-14 14H22A14 14 0 0 1 8 40z"/><path d="M14 34V14a6 6 0 0 1 12 0"/><path d="M26 20l-2 3M22 25l-2 3M30 25l-2 3"/><path d="M18 54l-3 6M46 54l3 6"/></svg>
+      <figcaption>Platzhalter: Foto eines Bades</figcaption></figure>
+    <figure class="slide ph" aria-label="Platzhalter Heizungsraum">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="22" height="48" rx="4"/><rect x="38" y="20" width="16" height="36" rx="8"/><path d="M21 40c-4-3-3-8 0-11 0 3 2 4 3 4 1-3 0-5 1-7 3 3 4 7 1 10"/><path d="M32 16h6M46 20v-8h-8"/></svg>
+      <figcaption>Platzhalter: Foto eines Heizungsraums</figcaption></figure>
+    <figure class="slide ph" aria-label="Platzhalter Solar">
+      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="46" cy="14" r="6"/><path d="M46 3v3M57 14h-3M54 6l-2 2M38 6l2 2"/><path d="M8 50l8-22h34l-8 22z"/><path d="M12 39h34M24 28l-6 22M36 28l-6 22"/></svg>
+      <figcaption>Platzhalter: Foto einer Solaranlage</figcaption></figure>
+  </div>
+  <button class="pfeil l" type="button" data-dir="-1" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="pfeil r" type="button" data-dir="1" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div class="punkte" id="punkte"></div>
+</div>
+
+<div class="held">
+  <h1>Ihre Experten für <span>Wärme &amp; Bad</span></h1>
+  <p>Aus Lichtenstein für die Region. Beratung, Einbau, Wartung und Kundendienst aus einer Hand.</p>
+  <a class="knopf" href="#termin">Beratungstermin vereinbaren</a>
+  <a class="tel" href="tel:+4971292703">oder anrufen: 07129 2703</a>
+</div>
+
+<section id="leistungen">
+  <div class="wrap">
+    <h2>Unsere Leistungen</h2>
+    <div class="kacheln" id="kacheln">
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#1E2B55"><rect x="6" y="16" width="36" height="22" rx="4"/><path d="M14 16v22M22 16v22M30 16v22"/><path d="M10 38v4M38 38v4"/></g><path stroke="#D7432F" d="M16 11c-2-2-2-4 0-6M24 11c-2-2-2-4 0-6M32 11c-2-2-2-4 0-6"/></svg>
+        <b>Heizung</b><small>Einbau, Austausch und Reparatur</small></div>
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#D7432F"><circle cx="35" cy="11" r="5"/><path d="M35 2v2M44 11h-2M41.5 4.5l-1.5 1.5M28.5 4.5l1.5 1.5"/></g><g stroke="#1E2B55"><path d="M5 40l6-17h28l-6 17z"/><path d="M8 32h28M18 23l-6 17M28 23l-6 17"/></g></svg>
+        <b>Solar</b><small>Warmwasser und Heizung mit Sonne</small></div>
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="5" width="28" height="38" rx="4" stroke="#1E2B55"/><path d="M16 12h16" stroke="#1E2B55"/><path stroke="#D7432F" d="M24 37c-5 0-7-4-5-8 1-2 3-3 3-6 3 2 4 4 4 6 1-1 2-2 2-3 2 2 3 4 2 6-1 3-3 5-6 5z"/></svg>
+        <b>Gas- und Ölfeuerung</b><small>Brenner, Kessel und Wartung</small></div>
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#1E2B55"><path d="M8 14h20a6 6 0 0 1 6 6v4"/><path d="M8 10v8"/><path d="M18 14V9M14 9h8"/><path d="M30 24h8"/></g><path stroke="#D7432F" d="M34 31c0 0-4 5-4 8a4 4 0 0 0 8 0c0-3-4-8-4-8z"/></svg>
+        <b>Sanitär</b><small>Leitungen, Armaturen, Warmwasser</small></div>
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="#1E2B55" d="M30 6a9 9 0 0 0-8 12L8 32a4 4 0 0 0 6 6l14-14a9 9 0 0 0 12-8l-5 3-5-2-1-5z"/><circle cx="36" cy="36" r="7" stroke="#D7432F"/><path stroke="#D7432F" d="M36 32v4l3 2"/></svg>
+        <b>Kundendienst</b><small>Schnell da, wenn etwas nicht läuft</small></div>
+      <div class="kachel">
+        <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#1E2B55"><path d="M5 26h38v4a10 10 0 0 1-10 10H15A10 10 0 0 1 5 30z"/><path d="M10 26V12a5 5 0 0 1 10 0"/><path d="M12 40l-2 4M36 40l2 4"/></g><g stroke="#D7432F"><path d="M20 16l-1 2M17 20l-1 2M23 20l-1 2"/></g></svg>
+        <b>Badsanierung</b><small>Vom Teilumbau bis zum neuen Bad</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="warum">
+  <div class="wrap">
+    <h2>Warum Koschmieder?</h2>
+    <ul class="gruende">
+      <li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#D7432F"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Beratung, die weitergeht</b><p>Mehr als das übliche Verkaufsgespräch: Wir schauen, was zu Ihrem Haus wirklich passt.</p></div></li>
+      <li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#D7432F"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Ehrlich kalkuliert</b><p>Gezielte Kalkulation und effiziente Arbeit. Das merken Sie am Preis.</p></div></li>
+      <li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="13" fill="#D7432F"/><path d="M8 14.5l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Aus der Region</b><p>Unser Betrieb sitzt in Lichtenstein. Wir sind schnell bei Ihnen und auch nach dem Einbau für Sie da.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="foerder" id="foerderung">
+  <div class="wrap">
+    <h2>Was zahlt die KfW für Ihre neue Heizung?</h2>
+    <p class="lead">Seit Juli 2026 gelten neue Sätze. Vier kurze Fragen, dann sehen Sie Ihren möglichen Zuschuss.</p>
+    <!-- TODO Klären: baut Koschmieder Wärmepumpen ein? Sonst Rechner auf Solar zuschneiden -->
+    <div class="rechner" id="rechner" data-tel="+4971292703" data-zaehlen="ja">
+      <noscript>Der Rechner braucht JavaScript. Rufen Sie uns an, wir rechnen es Ihnen vor: 07129 2703.</noscript>
+    </div>
+    <details class="ablauf">
+      <summary>So läuft der Antrag <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <ol>
+        <li><b>Beratung und Angebot</b>Wir schauen uns Haus und Heizung an.</li>
+        <li><b>Bestätigung zum Antrag</b>Wir erstellen die BzA bei der KfW.</li>
+        <li class="achtung"><b>Vertrag mit Fördervorbehalt</b>Ohne diesen Vorbehalt ist die Förderung weg.</li>
+        <li><b>Antrag in „Meine KfW“</b>Mit BzA-ID und Vertrag, wir helfen gern.</li>
+        <li><b>Zusage, Einbau, Auszahlung</b>Erst nach der Zusage bauen wir ein.</li>
+      </ol>
+      <p class="stand">Stand Oktober 2026. Verbindlich ist immer die Zusage der KfW.</p>
+    </details>
+  </div>
+</section>
+
+<section class="ref" id="referenzen">
+  <div class="wrap">
+    <h2>Referenzen</h2>
+    <p class="lead">Ein paar Eindrücke aus unserer Arbeit in der Region.</p>
+    <!-- TODO echte Baustellenfotos von Herrn Koschmieder einsetzen -->
+    <div class="bilder">
+      <figure class="breit"><button type="button" data-zoom="img/wagen.jpg" aria-label="Bild vergrößern: Firmenwagen"><img src="img/wagen.jpg" alt="Firmenwagen von Koschmieder Haustechnik" loading="lazy"></button></figure>
+      <figure class="ph"><svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34h48v6a14 14 0 0 1-14 14H22A14 14 0 0 1 8 40z"/><path d="M14 34V14a6 6 0 0 1 12 0"/></svg><figcaption>Foto: Bad</figcaption></figure>
+      <figure class="ph"><svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="22" height="48" rx="4"/><rect x="38" y="20" width="16" height="36" rx="8"/></svg><figcaption>Foto: Heizraum</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="dienst">
+      <b>Kundendienst</b>
+      <p>Heizung aus oder Wasser, wo keins sein soll? Rufen Sie direkt an.</p>
+      <a class="gross" href="tel:+4971292703">07129 2703</a>
+      <a class="mobil" href="tel:+491629173352">Mobil 0162 9173352</a>
+    </div>
+  </div>
+</section>
+
+<section class="termin" id="termin">
+  <div class="wrap">
+    <h2>Beratungstermin vereinbaren</h2>
+    <p class="lead">Schreiben Sie uns kurz, wir rufen in der Regel am nächsten Werktag zurück.</p>
+    <!-- TODO action auf Formspree oder Web3Forms setzen, sonst geht nichts raus -->
+    <form class="form" action="#" method="POST">
+      <fieldset>
+        <legend>Worum geht es?</legend>
+        <div class="chips">
+          <input type="radio" name="thema" id="t1" value="Heizung"><label for="t1">Heizung</label>
+          <input type="radio" name="thema" id="t2" value="Solar"><label for="t2">Solar</label>
+          <input type="radio" name="thema" id="t3" value="Bad"><label for="t3">Bad</label>
+          <input type="radio" name="thema" id="t4" value="Sanitär"><label for="t4">Sanitär</label>
+          <input type="radio" name="thema" id="t5" value="Kundendienst"><label for="t5">Kundendienst</label>
+        </div>
+      </fieldset>
+      <div><label for="n">Name</label><input id="n" name="name" autocomplete="name" required></div>
+      <div><label for="t">Telefon</label><input id="t" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div><label for="m">Nachricht <span class="opt">(optional)</span></label><textarea id="m" name="nachricht"></textarea></div>
+      <button class="knopf" type="submit">Anfrage senden</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fuss">
+      <div><img src="img/logo-hell.svg" alt="Koschmieder Haustechnik" width="525" height="211" loading="lazy">
+        <p style="margin-top:14px">Bussenhardstraße 26<br>72805 Lichtenstein</p></div>
+      <div><h3>Kontakt</h3>
+        <ul><li>Telefon <a href="tel:+4971292703">07129 2703</a></li><li>Mobil <a href="tel:+491629173352">0162 9173352</a></li><li>Fax 07129 694964</li><li><a href="mailto:info@koschmieder-haustechnik.de">info@koschmieder-haustechnik.de</a></li></ul></div>
+      <div><h3>Rechtliches</h3>
+        <ul><li><a href="https://koschmieder-haustechnik.de/impressum.html">Impressum</a></li><li><a href="https://koschmieder-haustechnik.de/impressum.html">Datenschutz</a></li></ul></div>
+    </div>
+    <p class="klein">© 2026 Koschmieder Haustechnik</p>
+  </div>
+</footer>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-label="Bildansicht"><button type="button" aria-label="Schließen">×</button><img alt=""></div>
+
+<script>
+(function(){
+  var ruhig = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Leiste oben, sobald der Kopf aus dem Bild ist */
+  var leiste = document.getElementById('leiste');
+  new IntersectionObserver(function(e){ leiste.classList.toggle('da', !e[0].isIntersecting); }).observe(document.getElementById('kopf'));
+
+  /* Slider */
+  var box = document.getElementById('slides'), slides = [].slice.call(box.children), punkte = document.getElementById('punkte'), akt = 0, timer;
+  slides.forEach(function(s, i){
+    var b = document.createElement('button'); b.type = 'button'; b.setAttribute('aria-label', 'Bild ' + (i + 1));
+    b.addEventListener('click', function(){ geh(i); neustart(); }); punkte.appendChild(b);
+  });
+  function markiere(i){
+    akt = i;
+    [].forEach.call(punkte.children, function(b, j){ b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+    slides.forEach(function(s, j){ s.classList.toggle('an', j === i); });
+  }
+  function geh(i){ i = (i + slides.length) % slides.length; box.scrollTo({ left: i * box.clientWidth, behavior: ruhig ? 'auto' : 'smooth' }); }
+  box.addEventListener('scroll', function(){ var i = Math.round(box.scrollLeft / box.clientWidth); if (i !== akt) markiere(i); }, { passive: true });
+  document.querySelectorAll('.pfeil').forEach(function(p){ p.addEventListener('click', function(){ geh(akt + Number(p.dataset.dir)); neustart(); }); });
+  function neustart(){ clearInterval(timer); if (!ruhig) timer = setInterval(function(){ geh(akt + 1); }, 5500); }
+  box.addEventListener('touchstart', function(){ clearInterval(timer); }, { passive: true });
+  box.addEventListener('touchend', neustart, { passive: true });
+  markiere(0); neustart();
+
+  /* Kacheln einblenden */
+  var k = document.getElementById('kacheln');
+  new IntersectionObserver(function(e, o){ if (e[0].isIntersecting){ k.classList.add('an'); o.disconnect(); } }, { threshold: .2 }).observe(k);
+
+  /* Bild groß */
+  var zoom = document.getElementById('zoom'), zImg = zoom.querySelector('img');
+  document.querySelectorAll('[data-zoom]').forEach(function(b){ b.addEventListener('click', function(){ zImg.src = b.dataset.zoom; zImg.alt = b.querySelector('img').alt; zoom.classList.add('offen'); zoom.querySelector('button').focus(); }); });
+  function zu(){ zoom.classList.remove('offen'); }
+  zoom.addEventListener('click', function(e){ if (e.target !== zImg) zu(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') zu(); });
+})();
+</script>
+<script src="rechner.js"></script>
+</body>
+</html>
