@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Modernes Bad mit Wanne und Dusche">
+<style>
+.drop{animation:fall 1.1s linear infinite}
+.d2{animation-delay:-.25s}.d3{animation-delay:-.5s}.d4{animation-delay:-.75s}.d5{animation-delay:-.4s}.d6{animation-delay:-.9s}
+@keyframes fall{0%{transform:translateY(0);opacity:0}10%{opacity:.9}90%{opacity:.9}100%{transform:translateY(118px);opacity:0}}
+.steam{animation:rise 4.5s ease-in-out infinite;opacity:0}
+.s2{animation-delay:-1.5s}.s3{animation-delay:-3s}
+@keyframes rise{0%{transform:translateY(10px);opacity:0}30%{opacity:.7}100%{transform:translateY(-46px);opacity:0}}
+.ripple{transform-box:fill-box;transform-origin:center;animation:ripple 2.6s ease-out infinite}
+@keyframes ripple{from{transform:scale(.4);opacity:.7}to{transform:scale(1.4);opacity:0}}
+.light{animation:glow 5s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.35}to{opacity:.7}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.steam{opacity:.5}}
+</style>
+<defs>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F6FA"/><stop offset="1" stop-color="#E7ECF3"/></linearGradient>
+<linearGradient id="tub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E3E8F0"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#CFE0F5" stop-opacity=".55"/><stop offset="1" stop-color="#CFE0F5" stop-opacity=".2"/></linearGradient>
+<radialGradient id="lamp" cx=".5" cy="0" r=".9"><stop offset="0" stop-color="#FFF6C4"/><stop offset="1" stop-color="#FFF6C4" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="300" fill="url(#w)"/>
+<g stroke="#DDE3EC" stroke-width="1.5"><path d="M0 75H400M0 150H400M100 0V236M200 0V236M300 0V236"/></g>
+<rect class="light" x="20" y="0" width="200" height="170" fill="url(#lamp)"/>
+<rect y="236" width="400" height="64" fill="#CFD7E3"/>
+<g stroke="#BFC8D6" stroke-width="1.2"><path d="M60 236 30 300M160 236 150 300M260 236 270 300M360 236 390 300M0 262H400"/></g>
+<!-- Spiegel und Lampe -->
+<rect x="70" y="40" width="88" height="70" rx="10" fill="#E6EEF8" stroke="#C9D1DE" stroke-width="2"/>
+<path d="M86 56l20 -10M92 70l34 -18" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"/>
+<rect x="84" y="28" width="60" height="6" rx="3" fill="#1E2B55"/>
+<!-- Handtuchhalter -->
+<path d="M196 96H236" stroke="#9AA6BA" stroke-width="4" stroke-linecap="round"/>
+<path d="M202 96h28v40a4 4 0 0 1-4 4h-20a4 4 0 0 1-4-4z" fill="#D7432F"/>
+<path d="M202 128h28" stroke="#B8362A" stroke-width="3"/>
+<!-- Wanne -->
+<path d="M30 176H256V196C256 222 236 236 210 236H76C50 236 30 222 30 196Z" fill="url(#tub)" stroke="#C9D1DE" stroke-width="2"/>
+<rect x="24" y="170" width="238" height="10" rx="5" fill="#fff" stroke="#C9D1DE" stroke-width="2"/>
+<path d="M40 178H246" stroke="#9CC3F2" stroke-width="3"/>
+<path d="M232 170v-26a10 10 0 0 1 20 0" fill="none" stroke="#9AA6BA" stroke-width="5" stroke-linecap="round"/>
+<g fill="none" stroke="#C3D0E2" stroke-width="5" stroke-linecap="round">
+  <path class="steam" d="M90 160c-6-8 6-14 0-22s6-14 0-22"/>
+  <path class="steam s2" d="M140 162c-6-8 6-14 0-22s6-14 0-22"/>
+  <path class="steam s3" d="M190 160c-6-8 6-14 0-22s6-14 0-22"/>
+</g>
+<!-- Dusche -->
+<rect x="282" y="40" width="92" height="196" rx="4" fill="url(#glass)" stroke="#B9C9DF" stroke-width="2"/>
+<path d="M300 60l16 -10M300 80l30 -18" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+<path d="M352 22V48H330" fill="none" stroke="#9AA6BA" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="306" y="46" width="34" height="9" rx="4.5" fill="#1E2B55"/>
+<g fill="#5E95D6">
+  <rect class="drop" x="310" y="60" width="2.6" height="10" rx="1.3"/>
+  <rect class="drop d2" x="317" y="60" width="2.6" height="10" rx="1.3"/>
+  <rect class="drop d3" x="324" y="60" width="2.6" height="10" rx="1.3"/>
+  <rect class="drop d4" x="331" y="60" width="2.6" height="10" rx="1.3"/>
+  <rect class="drop d5" x="314" y="60" width="2.6" height="10" rx="1.3"/>
+  <rect class="drop d6" x="328" y="60" width="2.6" height="10" rx="1.3"/>
+</g>
+<ellipse class="ripple" cx="322" cy="226" rx="22" ry="4" fill="none" stroke="#5E95D6" stroke-width="2"/>
+<rect x="282" y="226" width="92" height="10" fill="#E3EAF3"/>
+</svg>

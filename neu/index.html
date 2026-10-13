@@ -24,7 +24,7 @@ body{font-family:Archivo,system-ui,sans-serif;color:var(--ink);background:var(--
 img{max-width:100%;display:block}
 a{color:inherit}
 .wrap{width:min(1100px,calc(100% - 2*var(--gut)));margin-inline:auto}
-section{padding:46px 0}
+section{padding:46px 0;scroll-margin-top:60px}
 h2{font-size:1.5rem;line-height:1.2;font-weight:650;color:var(--navy);text-align:center;letter-spacing:-.005em}
 h2 + .lead{text-align:center;color:var(--muted);margin:8px auto 0;max-width:34ch}
 .ic{width:20px;height:20px;flex:none}
@@ -45,12 +45,11 @@ h2 + .lead{text-align:center;color:var(--muted);margin:8px auto 0;max-width:34ch
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .slides::-webkit-scrollbar{display:none}
 .slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/3;position:relative;overflow:hidden;margin:0}
-.slide img{width:100%;height:100%;object-fit:cover;object-position:0 50%}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide.foto img{object-position:0 50%}
+.slide img[src$=".svg"]{background:#EEF2F8}
 .slide.an img{animation:zoom 7s ease-out both}
 @keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-.ph{background:linear-gradient(160deg,#EEF1F6,#DCE2EC);display:grid;place-items:center}
-.ph svg{width:96px;height:96px;opacity:.55}
-.ph figcaption{position:absolute;left:14px;bottom:34px;font-size:.78rem;color:var(--muted);background:rgba(255,255,255,.8);padding:4px 8px;border-radius:4px}
 .pfeil{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer;color:var(--navy)}
 .pfeil.l{left:10px}.pfeil.r{right:10px}
 .pfeil svg{width:18px;height:18px}
@@ -135,8 +134,7 @@ h2 + .lead{text-align:center;color:var(--muted);margin:8px auto 0;max-width:34ch
 .bilder figure.breit{grid-column:1/-1;aspect-ratio:16/10}
 .bilder img{width:100%;height:100%;object-fit:cover}
 .bilder button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
-.bilder .ph svg{width:52px;height:52px}
-.bilder .ph figcaption{bottom:10px;left:10px}
+.bilder figcaption{position:absolute;left:8px;bottom:8px;font-size:.72rem;color:var(--muted);background:rgba(255,255,255,.88);padding:3px 7px;border-radius:4px}
 .zoom{position:fixed;inset:0;z-index:80;background:rgba(10,14,30,.92);display:none;align-items:center;justify-content:center;padding:16px}
 .zoom.offen{display:flex;animation:auf .2s ease}
 @keyframes auf{from{opacity:0}to{opacity:1}}
@@ -213,17 +211,11 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
 <main>
 <div class="slider" aria-roledescription="Bildergalerie" aria-label="Bilder aus unserer Arbeit">
   <div class="slides" id="slides" tabindex="0">
-    <figure class="slide"><img src="img/wagen.jpg" alt="Firmenwagen von Koschmieder Haustechnik mit Logo und Leistungen" width="1400" height="880"></figure>
-    <!-- TODO Fotos: img/bad.jpg, img/heizraum.jpg, img/solar.jpg einsetzen (Querformat, mind. 1400 px breit) -->
-    <figure class="slide ph" aria-label="Platzhalter Bad">
-      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34h48v6a14 14 0 0 1-14 14H22A14 14 0 0 1 8 40z"/><path d="M14 34V14a6 6 0 0 1 12 0"/><path d="M26 20l-2 3M22 25l-2 3M30 25l-2 3"/><path d="M18 54l-3 6M46 54l3 6"/></svg>
-      <figcaption>Platzhalter: Foto eines Bades</figcaption></figure>
-    <figure class="slide ph" aria-label="Platzhalter Heizungsraum">
-      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="22" height="48" rx="4"/><rect x="38" y="20" width="16" height="36" rx="8"/><path d="M21 40c-4-3-3-8 0-11 0 3 2 4 3 4 1-3 0-5 1-7 3 3 4 7 1 10"/><path d="M32 16h6M46 20v-8h-8"/></svg>
-      <figcaption>Platzhalter: Foto eines Heizungsraums</figcaption></figure>
-    <figure class="slide ph" aria-label="Platzhalter Solar">
-      <svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="46" cy="14" r="6"/><path d="M46 3v3M57 14h-3M54 6l-2 2M38 6l2 2"/><path d="M8 50l8-22h34l-8 22z"/><path d="M12 39h34M24 28l-6 22M36 28l-6 22"/></svg>
-      <figcaption>Platzhalter: Foto einer Solaranlage</figcaption></figure>
+    <figure class="slide foto"><img src="img/wagen.jpg" alt="Firmenwagen von Koschmieder Haustechnik mit Logo und Leistungen" width="1400" height="880"></figure>
+    <!-- Animierte Zeichnungen. Später durch echte Fotos ersetzen (Querformat 4:3, mind. 1400 px breit) -->
+    <figure class="slide"><img src="img/bad.svg" alt="Zeichnung: modernes Bad mit Wanne und Dusche" width="400" height="300"></figure>
+    <figure class="slide"><img src="img/heizraum.svg" alt="Zeichnung: Heizungsraum mit Kessel und Speicher" width="400" height="300"></figure>
+    <figure class="slide"><img src="img/solar.svg" alt="Zeichnung: Haus mit Solaranlage für Warmwasser und Heizung" width="400" height="300"></figure>
   </div>
   <button class="pfeil l" type="button" data-dir="-1" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
   <button class="pfeil r" type="button" data-dir="1" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -306,8 +298,8 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
     <!-- TODO echte Baustellenfotos von Herrn Koschmieder einsetzen -->
     <div class="bilder">
       <figure class="breit"><button type="button" data-zoom="img/wagen.jpg" aria-label="Bild vergrößern: Firmenwagen"><img src="img/wagen.jpg" alt="Firmenwagen von Koschmieder Haustechnik" loading="lazy"></button></figure>
-      <figure class="ph"><svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34h48v6a14 14 0 0 1-14 14H22A14 14 0 0 1 8 40z"/><path d="M14 34V14a6 6 0 0 1 12 0"/></svg><figcaption>Foto: Bad</figcaption></figure>
-      <figure class="ph"><svg viewBox="0 0 64 64" fill="none" stroke="#1E2B55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="8" width="22" height="48" rx="4"/><rect x="38" y="20" width="16" height="36" rx="8"/></svg><figcaption>Foto: Heizraum</figcaption></figure>
+      <figure><img src="img/bad.svg" alt="Zeichnung: Bad" loading="lazy"><figcaption>Projektfoto folgt</figcaption></figure>
+      <figure><img src="img/heizraum.svg" alt="Zeichnung: Heizungsraum" loading="lazy"><figcaption>Projektfoto folgt</figcaption></figure>
     </div>
   </div>
 </section>
