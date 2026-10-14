@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Badstil modern">
+<rect width="160" height="120" fill="#5B616D"/>
+<g stroke="#4E535E" stroke-width="1.2"><path d="M0 40H160M0 80H160M54 0V96M108 0V96"/></g>
+<rect y="96" width="160" height="24" fill="#B9BEC7"/>
+<path d="M0 96H160" stroke="#A3A9B3" stroke-width="1.5"/>
+<rect x="18" y="16" width="52" height="34" rx="3" fill="#7D8592"/>
+<rect x="18" y="49" width="52" height="2" fill="#FFF6C4"/>
+<rect x="14" y="62" width="60" height="18" rx="2" fill="#23262E"/>
+<rect x="24" y="56" width="40" height="7" rx="2" fill="#FFFFFF"/>
+<path d="M44 56v-6h6" fill="none" stroke="#111318" stroke-width="2.4" stroke-linecap="round"/>
+<rect x="112" y="10" width="40" height="86" fill="#CFE0F5" opacity=".28"/>
+<path d="M112 10V96M112 10H152" stroke="#111318" stroke-width="2.2"/>
+<path d="M140 16v10" stroke="#111318" stroke-width="2.4" stroke-linecap="round"/>
+<rect x="132" y="25" width="16" height="4" rx="2" fill="#111318"/>
+<rect x="84" y="70" width="18" height="16" rx="3" fill="#FFFFFF"/>
+<rect x="82" y="58" width="22" height="6" rx="1" fill="#E7EAEF"/>
+</svg>

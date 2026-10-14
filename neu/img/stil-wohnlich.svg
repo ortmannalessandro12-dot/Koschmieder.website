@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Badstil wohnlich">
+<rect width="160" height="120" fill="#EADCC6"/>
+<rect x="0" y="0" width="56" height="96" fill="#E0CDB0"/>
+<g stroke="#D4BE9C" stroke-width="1"><path d="M0 32H56M0 64H56M28 0V96"/></g>
+<rect y="96" width="160" height="24" fill="#B98E62"/>
+<g stroke="#A97D52" stroke-width="1.2"><path d="M0 104H160M0 112H160M30 96V104M80 104V112M120 96V104M60 112V120"/></g>
+<circle cx="96" cy="32" r="16" fill="#F3EADB" stroke="#C9A15A" stroke-width="2.4"/>
+<rect x="72" y="62" width="48" height="22" rx="3" fill="#A86F42"/>
+<path d="M72 73H120" stroke="#8E5B33" stroke-width="1.5"/>
+<rect x="80" y="56" width="32" height="7" rx="3" fill="#FFFFFF"/>
+<path d="M96 56v-6h5" fill="none" stroke="#C9A15A" stroke-width="2.4" stroke-linecap="round"/>
+<g><rect x="134" y="74" width="14" height="16" rx="3" fill="#C9A15A"/>
+<path d="M141 74c-8-10-10-20-4-28M141 74c2-12 8-20 14-22M141 74c-2-10 0-18 6-26" fill="none" stroke="#4F7D57" stroke-width="3" stroke-linecap="round"/>
+<ellipse cx="137" cy="47" rx="6" ry="3" fill="#5E8E63" transform="rotate(-40 137 47)"/><ellipse cx="154" cy="52" rx="6" ry="3" fill="#5E8E63" transform="rotate(-20 154 52)"/><ellipse cx="147" cy="48" rx="5" ry="2.6" fill="#6E9C6F" transform="rotate(-60 147 48)"/></g>
+<rect x="16" y="36" width="26" height="4" rx="2" fill="#C9A15A"/>
+<rect x="18" y="40" width="22" height="30" rx="3" fill="#C2674A"/>
+<path d="M18 62h22" stroke="#A9553B" stroke-width="2"/>
+</svg>

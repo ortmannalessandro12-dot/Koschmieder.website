@@ -147,6 +147,25 @@ h2 + .lead{text-align:center;color:var(--muted);margin:8px auto 0;max-width:34ch
 .ablauf li.achtung b{color:var(--red)}
 .ablauf .stand{font-size:.78rem;padding:0 16px 16px;color:var(--muted)}
 
+/* Bad-Wunsch-Check */
+.wunsch{background:var(--soft)}
+button.r-cta{border:0;width:100%;font:inherit;font-weight:600;cursor:pointer}
+.r-opt .txt{display:flex;flex-direction:column;gap:2px}
+.r-opt small{color:var(--muted);font-size:.84rem;line-height:1.3}
+.r-opt.bild{padding:10px 12px 10px 10px}
+.r-opt.bild::before{display:none}
+.r-opt img{width:78px;height:58px;border-radius:8px;flex:none;object-fit:cover}
+.r-opt.bild .haupt{font-weight:600;color:var(--navy)}
+.r-opt.mehrfach::before{border-radius:6px}
+.r-opt[aria-pressed="true"]{border-color:var(--red);background:#FFF1EE}
+.r-opt[aria-pressed="true"]::before{border-color:var(--red);background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/14px}
+.r-weiter{margin-top:14px}
+.bc-titel{font-size:1.7rem}
+.bc-bild{margin:12px 0 4px;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.bc-bild img{width:100%;height:100%;object-fit:cover}
+.r-list li b{text-align:right}
+.kachel-link{display:inline-block;margin-top:8px;font-size:.82rem;font-weight:600;color:var(--red);text-decoration:none}
+
 /* Referenzen */
 .ref h2{text-align:left}
 .ref .lead{text-align:left;margin-left:0}
@@ -210,7 +229,7 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
   .held{margin-top:-60px;max-width:640px;margin-inline:auto;border-radius:22px;box-shadow:var(--shadow)}
   .kacheln{grid-template-columns:repeat(3,1fr)}
   .gruende{grid-template-columns:repeat(2,1fr)}
-  .foerder .wrap{max-width:640px}
+  .foerder .wrap,.wunsch .wrap{max-width:640px}
   .bilder{grid-template-columns:repeat(4,1fr)}
   .bilder figure.breit{grid-column:span 2;aspect-ratio:auto}
   .pellet .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
@@ -288,7 +307,7 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
         <b>Kundendienst</b><small>Schnell da, wenn etwas nicht läuft</small></div>
       <div class="kachel">
         <svg viewBox="0 0 48 48" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g stroke="#1E2B55"><path d="M5 26h38v4a10 10 0 0 1-10 10H15A10 10 0 0 1 5 30z"/><path d="M10 26V12a5 5 0 0 1 10 0"/><path d="M12 40l-2 4M36 40l2 4"/></g><g stroke="#D7432F"><path d="M20 16l-1 2M17 20l-1 2M23 20l-1 2"/></g></svg>
-        <b>Badsanierung</b><small>Vom Teilumbau bis zum neuen Bad</small></div>
+        <b>Badsanierung</b><small>Vom Teilumbau bis zum neuen Bad</small><a class="kachel-link" href="#wunschbad">Wunschbad zusammenstellen</a></div>
     </div>
     <!-- Nur bestätigte Marken. Herstellerlogos nur mit Fachpartner-Freigabe einsetzen. -->
     <div class="marken">
@@ -354,6 +373,16 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
       </ol>
       <p class="stand">Stand Oktober 2026. Verbindlich ist immer die Zusage der KfW.</p>
     </details>
+  </div>
+</section>
+
+<section class="wunsch" id="wunschbad">
+  <div class="wrap">
+    <h2>Ihr neues Bad in fünf Fragen</h2>
+    <p class="lead">Zeigen Sie uns, in welche Richtung es gehen soll. Dann wissen wir schon vor dem Termin, worauf es Ihnen ankommt.</p>
+    <div class="rechner" id="badcheck" data-ziel="#termin" data-feld="#m" data-thema="#t3">
+      <noscript>Der Fragebogen braucht JavaScript. Schreiben Sie uns Ihre Wünsche gern unten ins Formular.</noscript>
+    </div>
   </div>
 </section>
 
@@ -476,5 +505,6 @@ footer .klein{border-top:1px solid rgba(255,255,255,.14);margin-top:26px;padding
 })();
 </script>
 <script src="rechner.js"></script>
+<script src="bad-check.js"></script>
 </body>
 </html>
